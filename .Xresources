@@ -1,0 +1,77 @@
+URxvt*termName:							screen-256color
+URxvt*geometry: 						100x50
+URxvt*loginShell: 					true
+URxvt*scrollColor: 					#777777
+URxvt*scrollstyle: 					plain
+URxvt*scrollTtyKeypress: 		true
+URxvt*scrollTtyOutput: 			false
+URxvt*scrollWithBuffer: 		false
+URxvt*secondaryScreen: 			true
+URxvt*secondaryScroll: 			true
+URxvt*skipScroll: 					true
+URxvt*scrollBar: 						false
+URxvt*scrollBar_right: 			false
+URxvt*scrollBar_floating: 	false
+URxvt*fading: 							30
+URxvt*utmpInhibit: 					false
+URxvt*urgentOnBell: 				false
+URxvt*visualBell: 					true
+URxvt*mapAlert: 						true
+URxvt*mouseWheelScrollPage: true
+URxvt*foreground: 					White
+URxvt*colorUL: 							yellow
+URxvt*underlineColor: 			yellow
+URxvt*font:									xft:ohsnap:pixelsize=14
+URxvt*saveLines: 						1000
+URxvt*buffered: 						true
+URxvt*hold: 								false
+URxvt.depth: 								32
+URxvt.background: 					rgba:1111/1111/1111/cccc
+URxvt*internalBorder:
+URxvt*print-pipe: 					cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+URxvt*perl-ext-common: 			osc-xterm-clipboard
+URxvt*perl-ext:
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: 						False
+URxvt.perl-ext-common: 			default,clipboard
+URxvt*keysym.Home: 					\033[1~
+URxvt*keysym.End: 					\033[4~
+
+Xft.autohint: 							0
+Xft.lcdfilter:  						lcddefault
+Xft.hintstyle:  						hintfull
+Xft.hinting: 								1
+Xft.antialias: 							1
+Xft.rgba: 									rgb
+
+*URxvt.perl-ext-common:			osc-xterm-clipboard
+
+!Black
+URxvt*color0:         #2D2D2D
+URxvt*color8:         #3D3D3D
+!Red
+URxvt*color1:         #98422B
+URxvt*color9:         #B6310E
+!Green
+URxvt*color2:         #5D8A45
+URxvt*color10:        #569E30
+!Yellow
+URxvt*color3:         #98782B
+URxvt*color11:        #B6850E
+!Blue
+URxvt*color4:         #2F568B
+URxvt*color12:        #1C539D
+!Magenta
+URxvt*color5:         #892898
+URxvt*color13:        #A10EB6
+!Cyan
+URxvt*color6:         #2A9878
+URxvt*color14:        #0EB685
+!White
+URxvt*color7:         #B2B2B2
+URxvt*color15:        #FFFFFF
+
+! key binding here 
+
+
+
