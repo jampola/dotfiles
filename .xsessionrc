@@ -1,1 +1,6 @@
-/home/james/.xsessionrc
+xbindkeys &
+~/.screenres.sh
+compton -b -CG &
+sleep 1
+nitrogen --restore
+btsync &
