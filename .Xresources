@@ -1,1 +1,84 @@
-/home/james/.Xresources
+URxvt*termName: 						screen-256color
+URxvt*geometry: 						100x50
+URxvt*loginShell: 						true
+URxvt*scrollColor: 						#777777
+URxvt*scrollstyle: 						plain
+URxvt*scrollTtyKeypress: 				true
+URxvt*scrollTtyOutput: 					false
+URxvt*scrollWithBuffer: 				false
+URxvt*secondaryScreen: 					true
+URxvt*secondaryScroll: 					true
+URxvt*skipScroll: 						true
+URxvt*scrollBar: 						false
+URxvt*scrollBar_right: 					false
+URxvt*scrollBar_floating: 				false
+URxvt*fading: 							30
+URxvt*utmpInhibit: 						false
+URxvt*urgentOnBell: 					false
+URxvt*visualBell: 						true
+URxvt*mapAlert: 						true
+URxvt*mouseWheelScrollPage: 			true
+URxvt*foreground: 						White
+URxvt*colorUL: 							yellow
+URxvt*underlineColor: 					yellow
+URxvt*font:								xft:ohsnap:pixelsize=14
+URxvt*saveLines: 						20
+URxvt*buffered: 						true
+URxvt*hold: 							false
+URxvt.depth: 							32
+URxvt.background: 						[75]#000000
+URxvt*internalBorder:
+URxvt*print-pipe: 						cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+URxvt*perl-ext-common: 					osc-xterm-clipboard
+URxvt*perl-ext:
+URxvt.keysym.Shift-Control-V: 			perl:clipboard:paste
+URxvt.iso14755: 						False
+URxvt.perl-ext-common: 					default,clipboard
+URxvt*keysym.Home: 						\033[1~
+URxvt*keysym.End: 						\033[4~
+
+Xft.autohint: 							0
+Xft.lcdfilter:  						lcddefault
+Xft.hintstyle:  						hintfull
+Xft.hinting: 							1
+Xft.antialias: 							1
+Xft.rgba: 								rgb
+
+*URxvt.perl-ext-common:					osc-xterm-clipboard
+
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #2e3436
+*.color8:       #555753
+
+! red
+*.color1:       #a31604
+*.color9:       #c60001
+
+! green
+*.color2:       #447241
+*.color10:      #27a343
+
+! yellow
+*.color3:       #c1951a
+*.color11:      #d5a30e
+
+! blue
+*.color4:       #425387
+*.color12:      #4a5a8d
+
+! magenta
+*.color5:       #965d98
+*.color13:      #893c8c
+
+! cyan
+*.color6:       #06989a
+*.color14:      #12bccb
+
+! white
+*.color7:       #d3d7cf
+*.color15:      #eeeeec
