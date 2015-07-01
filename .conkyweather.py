@@ -10,6 +10,7 @@ class weatherData:
 	def __init__(self):
 		self.current_temp = ""
 		self.current_conditions = ""
+		self.user_woeid = "1226059"
 
 		self.file = '/tmp/weather_output'
 		
@@ -37,11 +38,12 @@ class weatherData:
 		while True:
 			self.fo = open(self.file,"wb")
 			print "getting weather"
-			print  self.get('1226059','c')
+			print  self.get(self.user_woeid,'c')
 			print "sleeping"
-			self.fo.write(self.get('1226059','c'))
+			self.fo.write(self.get(self.user_woeid,'c'))
 			self.fo.close()
-			time.sleep(60)
+			# time.sleep(60)
+			exit()
 
 if __name__ == '__main__':
 	app = weatherData()
