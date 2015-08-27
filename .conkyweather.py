@@ -37,9 +37,9 @@ class weatherData:
 	def run(self):
 		while True:
 			self.fo = open(self.file,"wb")
-			print "getting weather"
-			print  self.get(self.user_woeid,'c')
-			print "sleeping"
+			print ("getting weather")
+			print  (self.get(self.user_woeid,'c'))
+			print ("sleeping")
 			self.fo.write(self.get(self.user_woeid,'c'))
 			self.fo.close()
 			# time.sleep(60)
