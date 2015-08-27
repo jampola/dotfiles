@@ -5,4 +5,6 @@ xrandr --newmode "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 
 #xrandr --addmode VGA1 1368x768_60.00
 xrandr --addmode VGA1 1280x1024_60.00
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1368x0 --rotate normal --output HDMI1 --mode 1920x1080 --pos 3288x0 --rotate normal --output VGA1 --mode 1368x768_60.00 --pos 0x0 --rotate normal
-xrandr --output HDMI2 --mode 1920x1080 --pos 1368x0 --rotate normal --output HDMI1 --mode 1920x1080 --pos 3288x0 --rotate normal --output VGA1 --mode 1280x1024_60.00 --pos 0x0 --rotate normal
+#xrandr --output HDMI2 --mode 1920x1080 --pos 1368x0 --rotate normal --output HDMI1 --mode 1920x1080 --pos 3288x0 --rotate normal --output VGA1 --mode 1280x1024_60.00 --pos 0x0 --rotate normal
+# right monitor on angle (code stylee)
+xrandr --output HDMI2 --mode 1920x1080 --pos 1280x328 --rotate normal --output HDMI1 --mode 1920x1080 --pos 3200x0 --rotate right --output VIRTUAL1 --off --output VGA1 --mode 1280x1024 --pos 0x328 --rotate normal
