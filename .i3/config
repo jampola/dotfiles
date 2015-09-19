@@ -4,6 +4,8 @@ set $mod Mod4
 # # # run our weather script # # #
 exec kill -9 $(pidof -x  /usr/bin/python /home/james/.conkyweather.py)
 exec_always /home/james/.conkyweather.py
+exec killall -q xfce4-notifyd
+exec --no-startup-id dunst -config /home/james/.i3/dunstrc
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode

@@ -34,6 +34,6 @@ TEXT
   { "full_text" : "${memperc}%" , "color" : "\#8CB202"},
 	{ "full_text" : "" , "color" : "\#EBEBEB" },
   { "full_text" : "${exec amixer get 'Master',0 | egrep -o '[0-9]{1,3}%' | head -n 1}" , "color" : "\#8CB202" },
-	{ "full_text" : "" , "color" : "\#EBEBEB" },
+	{ "full_text" : "" , "color" : "\#EBEBEB" },
   { "full_text" : "${time %B %d}, ${time %H:%M}" , "color" : "\#FFFFFF" }
 ],

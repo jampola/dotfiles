@@ -21,7 +21,9 @@ URxvt*mouseWheelScrollPage: 			true
 URxvt*foreground: 						White
 URxvt*colorUL: 							yellow
 URxvt*underlineColor: 					yellow
-URxvt*font:								xft:ohsnap:pixelsize=14
+
+URxvt.font:	xft:Inconsolata\ for\ Powerline:pixelsize=12:antialias=true:hinting=true,xft:PowerlineSymbols
+
 URxvt*saveLines: 						20
 URxvt*buffered: 						true
 URxvt*hold: 							false
