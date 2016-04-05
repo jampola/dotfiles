@@ -1,0 +1,24 @@
+from time import sleep
+import os
+import sys
+
+my_str_test = sys.argv[1]
+print(my_str_test)
+exit()
+my_str = "This is a super long string but we only want to see it 8 char at a time..."
+str_len = len(my_str)
+
+# define our start position and end positions to begin with
+start_pos = 0
+end_pos = 7
+
+while True:
+    # to similate reading on one line
+    os.system('tput reset')   
+    print(my_str[start_pos:end_pos])
+    start_pos+=1
+    end_pos+=1
+    if start_pos == str_len:
+        start_pos = 0
+        end_pos = 7
+    sleep(.1)

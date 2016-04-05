@@ -1,0 +1,24 @@
+import subprocess
+import logging
+import sys
+
+svc = str(sys.argv[1])
+
+logging.basicConfig(filename='svc_scp.log',
+                    format = '%(asctime)s - %(levelname)s: %(message)s',
+                    level=logging.DEBUG)
+
+logging.info('Checking if process' + svc + ' is running')
+
+service_is_running = subprocess.call(["ps", "-C", svc])
+
+if service_is_running == 1:
+    logging.warning('Process ' + svc + ' is not running')
+    logging.info('Attemtping to restart service ' + svc)
+    restart_sts = subprocess.call(["systemctl", "start", "%s" % svc])
+    if restart_sts == 1:
+        logging.error("could not restart service: %s, please check your logs" % svc)
+    else:
+        logging.info("%s sucessfully started" % svc)
+else:
+    logging.info("service %s is already running" % svc)

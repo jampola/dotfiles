@@ -1,0 +1,51 @@
+#!/usr/bin/python
+import requests
+import requests.auth
+import pprint
+from time import sleep
+import sys
+
+
+class RedditModbot():
+	def __init__(self):
+		#error checking
+		self.error_file = "redditbot.log"
+		sys.stdout = open(self.error_file, 'w')
+		user_agent = ""
+		client_id = "5iakjof1W5MTyg"
+		client_secret = "CSXB_3fp9tQ4Wf9tu__n3GTHbwI"
+		self.client_auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
+		self.post_data = {"grant_type": "password", "username": "jampola", "password": "tub2nutjam"}
+		self.headers = {"User-Agent": "ChangeMeClient/0.1 by jampola"}
+		self.filename = '/tmp/modqueue'
+
+	def check_modqueue(self):
+		response = requests.post("https://www.reddit.com/api/v1/access_token", auth=self.client_auth, data=self.post_data, headers=self.headers)
+		access_token = response.json()['access_token']
+		headers = {"Authorization": "bearer " + access_token, "User-Agent": "ChangeMeClient/0.1 by jampola"}
+		modqueue_response = requests.get("https://oauth.reddit.com//r/linux/about/modqueue?limit=100", headers=headers)
+		modqueue = modqueue_response.json()
+
+		# empty the contents of our file
+		open(self.filename, 'w').close()
+
+		fo = open(self.filename, 'wb')
+
+		try:
+			count = len(modqueue['data']['children'])
+			msg = "%s in modqueue" % str(count)
+			fo.write(msg)
+		except:
+			msg = "0 in modqueue"
+			cmd = "echo '%s' > /tmp/modqueue" % msg
+			fo.write(msg)
+		fo.close()
+
+	def run(self):
+		while True:
+			self.check_modqueue()
+			sleep(10)
+
+if __name__ == '__main__':
+	app = RedditModbot()
+	app.run()
