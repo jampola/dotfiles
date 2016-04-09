@@ -2,10 +2,11 @@ set $mod Mod4
 
 
 # # # run our weather script # # #
-exec kill -9 $(pidof -x  /usr/bin/python /home/james/.conkyweather.py)
-exec_always /home/james/.conkyweather.py
+exec_always /home/james/scripts/redditbot.py
 exec killall -q xfce4-notifyd
 exec --no-startup-id dunst -config /home/james/.i3/dunstrc
+exec_always xscreensaver -nosplash
+# exec_always /home/james/scripts/.xrandrsetup.sh
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -20,30 +21,29 @@ for_window [class="^.*"] border pixel 2
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-
 # # # set workspace names # # #
-set $one "⸢1⸥"
-set $two "⸢2⸥"
-set $three "⸢3⸥"
-set $four "⸢4⸥"
-set $five "⸢5⸥"
-set $six "⸢6⸥"
+set $one "⸢1 Web⸥"
+set $two "⸢2 Term⸥"
+set $three "⸢3 Term⸥"
+set $four "⸢4 Dev⸥"
+set $five "⸢5 Dev⸥"
+set $six "⸢6 Chat"
 set $seven "⸢7⸥"
 set $eight "⸢8⸥"
 set $nine "⸢9⸥"
 set $zero "⸢0⸥"
 
 # # # bind to specific displays # # #
-workspace $one output HDMI2
-workspace $two output HDMI1
-workspace $three output HDMI2
-workspace $four output HDMI1
-workspace $five output HDMI2
-workspace $six output HDMI1
-workspace $seven output HDMI2
-workspace $eight output HDMI1
-workspace $nine output VGA1
-workspace $zero output VGA1
+workspace $one output HDMI-0
+workspace $two output HDMI-0
+workspace $three output HDMI-0
+workspace $four output HDMI-0
+workspace $five output HDMI-0
+workspace $six output HDMI-0
+workspace $seven output HDMI-0
+workspace $eight output HDMI-0
+workspace $nine output DVI-D-1
+workspace $zero output DVI-D-1
 # # # wm colors # # #
 
 set $color2 #8CB202
@@ -79,9 +79,9 @@ mode "resize" {
 
 bar {
 	font pango: ohsnap 10
-	position top
-	status_command /home/james/conky-i3bar.sh
-	output HDMI1
+        position top
+	status_command /home/james/scripts/conky-i3bar.sh
+	output HDMI-0
 	colors {
 		background #222222
 		separator #222222
@@ -97,25 +97,8 @@ bar {
 bar {
 	font pango: ohsnap 10
 	position top
-	status_command i3status -c ~/.i3/i3status.conf
-	output HDMI2
-	colors {
-		background #222222
-		separator #222222
-	  #										border		bg 				text
-	  focused_workspace		#000000 	#000000  	#ffffff
-	  active_workspace		#000000 	#000000  	#ffffff
-	  inactive_workspace	#222222 	#222222  	#818181
-	  #urgent_workspace		#ff6622 	#aa7766  	#bbdddd
-
-	}
-}
-
-bar {
-	font pango: ohsnap 10
-	position top
-	status_command i3status -c ~/.i3/i3status.conf
-	output VGA1
+	status_command i3status -c ~/.config/i3/i3status.conf
+	output DVI-D-1
  	colors {
 		background #222222
 		separator #222222
@@ -164,6 +147,8 @@ bindsym $mod+0 workspace $zero
 for_window [class="Wine"] floating enable, border none
 for_window [class="Pavucontrol"] floating enable, border none
 for_window [class="Xarchiver"] floating enable, border none
+for_window [class="Emp_login.py"] floating enable, border none
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
